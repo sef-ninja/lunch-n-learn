@@ -1,0 +1,2 @@
+set DATABASE_URL="postgres://postgres:ConfTech42@localhost:5432/conftechlocaldb"
+export DATABASE_URL="postgres://postgres:ConfTech42@localhost:5432/conftechlocaldb"

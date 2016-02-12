@@ -1,0 +1,4 @@
+#!/bin/bash
+# Launch Lucene Lunch 'n Learn demo app
+
+mvn -q exec:java -Dexec.mainClass="ninja.sef.simpleindex.SimpleIndexApp" -Dexec.args="$@"

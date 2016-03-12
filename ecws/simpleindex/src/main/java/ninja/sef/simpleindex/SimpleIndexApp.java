@@ -11,7 +11,7 @@ public class SimpleIndexApp {
             System.exit(1);
         }
         
-        OperationFactory.createOperation(args[0]).execute();
+        OperationFactory.createOperation(args[0]).execute(INDEX_DIR);
     }
 
     private static void printUsageStatement() {
@@ -19,9 +19,9 @@ public class SimpleIndexApp {
         System.out.println("Usage:");
         System.out.println("    demoapp <operation>");
         System.out.println("");
-        System.out.println("Valid operations:");
-        System.out.println("    -buildindex");
-        System.out.println("    -termquery");
+        System.out.println("    Valid operations:");
+        System.out.println("            -buildindex");
+        System.out.println("            -termquery");
         System.out.println("");
     }
 }

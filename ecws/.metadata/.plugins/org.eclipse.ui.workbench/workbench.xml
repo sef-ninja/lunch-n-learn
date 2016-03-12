@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="19" version="2.0">
 <workbenchAdvisor/>
-<window height="766" width="1192" x="65" y="24">
+<window height="762" width="1198" x="74" y="32">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -21,7 +21,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.m2e.editor.MavenPomEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -30,16 +31,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LuceneTextIndexer.java" partName="LuceneTextIndexer.java" path="/home/hourglass/dev/lunch-n-learn/ecws/simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java" title="LuceneTextIndexer.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="747" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
@@ -75,10 +70,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
-</expanded>
-<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="184" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="262" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -92,6 +84,12 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
+</viewState>
 </view>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
@@ -109,7 +107,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.search.ui.views.SearchView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
@@ -230,6 +228,7 @@
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -252,14 +251,14 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.17617022" ratioLeft="207" ratioRight="968" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.8469697" ratioLeft="559" ratioRight="101" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<info part="org.eclipse.ui.editorss" ratio="0.13483146" ratioLeft="156" ratioRight="1001" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.8158295" ratioLeft="536" ratioRight="121" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -267,6 +266,7 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -283,18 +283,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/example/src/ninja/sef/example/ExampleApp.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java"/>
-</editors>
-<item historyLabel="ExampleApp.java" index="0">
-<position info="not_deleted" x="174" y="0"/>
-</item>
-<item active="true" historyLabel="LuceneTextIndexer.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -311,11 +300,50 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSheetDocumentBuilder.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/InfoSheetDocumentBuilder.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/InfoSheetDocumentBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DocumentBuilder.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/DocumentBuilder.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/DocumentBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleIndexApp.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/SimpleIndexApp.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/SimpleIndexApp.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Operation.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/Operation.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/Operation.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OperationFactory.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/OperationFactory.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/OperationFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IndexCreatorOperation.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/IndexCreatorOperation.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/IndexCreatorOperation.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LuceneTextIndexer.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java">
 <persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneTextIndexer.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExampleApp.java" tooltip="example/src/ninja/sef/example/ExampleApp.java">
-<persistable path="/example/src/ninja/sef/example/ExampleApp.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="simpleindex/pom.xml">
+<persistable path="/simpleindex/pom.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextIndexer.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/TextIndexer.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/TextIndexer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LuceneDocumentBuilder.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneDocumentBuilder.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/index/LuceneDocumentBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TikaInfoSheetCrawler.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/crawler/TikaInfoSheetCrawler.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/crawler/TikaInfoSheetCrawler.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSheet.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheet.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TikaInfoSheetBuilder.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/crawler/TikaInfoSheetBuilder.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/crawler/TikaInfoSheetBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSheetBuilder.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheetBuilder.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheetBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSheetCrawler.java" tooltip="simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheetCrawler.java">
+<persistable path="/simpleindex/src/main/java/ninja/sef/simpleindex/crawler/InfoSheetCrawler.java"/>
 </file>
 </mruList>
 </workbench>

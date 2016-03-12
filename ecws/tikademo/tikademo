@@ -1,0 +1,4 @@
+#!/bin/bash
+# Launch Tika demo app
+
+mvn -q exec:java -Dexec.mainClass="ninja.sef.tikademo.TikaDemoApp" -Dexec.args="$@"

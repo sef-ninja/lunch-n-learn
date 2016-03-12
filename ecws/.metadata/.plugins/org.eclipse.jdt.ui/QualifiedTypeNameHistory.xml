@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="org.apache.tika.metadata.Metadata"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="org.xml.sax.ContentHandler"/>
+<fullyQualifiedTypeName name="org.apache.tika.parser.Parser"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.Operation"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.Document"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.IndexCreatorOperation"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheet"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.TextField"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.Field.Store"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.StringField"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.LuceneDocumentBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.DocumentBuilder"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.DateTools"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.DateTools.Resolution"/>
+</qualifiedTypeNameHistroy>

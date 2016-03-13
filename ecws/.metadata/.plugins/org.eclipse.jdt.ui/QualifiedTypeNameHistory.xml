@@ -8,12 +8,10 @@
 <fullyQualifiedTypeName name="org.apache.tika.parser.Parser"/>
 <fullyQualifiedTypeName name="java.io.Reader"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.Operation"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
-<fullyQualifiedTypeName name="org.apache.lucene.document.Document"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.index.IndexCreatorOperation"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheet"/>
@@ -24,4 +22,17 @@
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.index.DocumentBuilder"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools.Resolution"/>
+<fullyQualifiedTypeName name="org.apache.lucene.analysis.Analyzer"/>
+<fullyQualifiedTypeName name="org.apache.lucene.index.Term"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.TermQuery"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.IndexSearcher"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.apache.lucene.index.IndexReader"/>
+<fullyQualifiedTypeName name="org.apache.lucene.store.FSDirectory"/>
+<fullyQualifiedTypeName name="org.apache.lucene.store.Directory"/>
+<fullyQualifiedTypeName name="org.apache.lucene.index.DirectoryReader"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.TopDocs"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.ScoreDoc"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.TermQueryOperation"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.Document"/>
 </qualifiedTypeNameHistroy>

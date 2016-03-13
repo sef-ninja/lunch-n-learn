@@ -1,0 +1,53 @@
+package ninja.sef.simpleindex.index;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import ninja.sef.simpleindex.crawler.InfoSheet;
+
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.Version;
+
+public class LuceneTextIndexer implements TextIndexer {
+
+    private String indexDirPath = "";
+    private DocumentBuilder documentBuilder;
+    
+    public LuceneTextIndexer(String indexDirPath, DocumentBuilder documentBuilder) {
+        this.indexDirPath = indexDirPath;
+        this.documentBuilder = documentBuilder;
+    }
+
+    public void initializeIndex(List<InfoSheet> infoSheets) {
+        try {
+            Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_44);
+            IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LUCENE_44,
+                    analyzer);
+            
+            Directory indexDir = FSDirectory.open(new File(indexDirPath));
+            IndexWriter indexWriter = new IndexWriter(indexDir, indexWriterConfig);
+            
+            for(InfoSheet infoSheet : infoSheets) {
+                
+                System.out.println("Indexing: " + infoSheet.getTitle());
+                
+                Document document = documentBuilder.build(infoSheet);
+                indexWriter.addDocument(document);
+            }
+            
+            indexWriter.commit();
+            indexWriter.close();
+            
+            System.out.println("Initialized full-text index");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

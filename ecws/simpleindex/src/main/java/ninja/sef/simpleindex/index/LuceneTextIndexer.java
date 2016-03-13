@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import ninja.sef.simpleindex.crawler.InfoSheet;
-
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.IndexWriter;
@@ -13,6 +12,8 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
+
+import ninja.sef.simpleindex.crawler.InfoSheet;
 
 public class LuceneTextIndexer implements TextIndexer {
 
@@ -26,9 +27,11 @@ public class LuceneTextIndexer implements TextIndexer {
 
     public void initializeIndex(List<InfoSheet> infoSheets) {
         try {
-            Directory indexDir = FSDirectory.open(new File(indexDirPath));
+            Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_44);
             IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LUCENE_44,
-                    new StandardAnalyzer(Version.LUCENE_44));
+                    analyzer);
+            
+            Directory indexDir = FSDirectory.open(new File(indexDirPath));
             IndexWriter indexWriter = new IndexWriter(indexDir, indexWriterConfig);
             
             for(InfoSheet infoSheet : infoSheets) {

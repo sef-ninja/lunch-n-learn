@@ -19,11 +19,12 @@ public class TikaInfoSheetBuilder implements InfoSheetBuilder {
         Tika tika = new Tika();
         try {
             
+            
             // Use Tika facade one-liner
             Reader reader = tika.parse(infoSheetFile);
             
             
-            BufferedReader br = new BufferedReader(reader);
+            
             infoSheet = new InfoSheet();
             String description = "";
 
@@ -31,6 +32,7 @@ public class TikaInfoSheetBuilder implements InfoSheetBuilder {
             boolean descSection = false;
             int lineNum = 1;
             
+            BufferedReader br = new BufferedReader(reader);
             String line = br.readLine();
             while(line != null) {
                 if(descSection){

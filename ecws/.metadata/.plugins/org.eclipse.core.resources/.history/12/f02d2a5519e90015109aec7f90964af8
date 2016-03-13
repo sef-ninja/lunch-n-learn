@@ -1,0 +1,13 @@
+package ninja.sef.simpleindex.query;
+
+import ninja.sef.simpleindex.Operation;
+
+public class TermQueryOperation implements Operation {
+
+    @Override
+    public void execute(String indexDir) {
+        System.out.println("**** Executing term query on index at: " + indexDir);
+
+    }
+
+}

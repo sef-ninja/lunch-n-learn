@@ -1,0 +1,13 @@
+package ninja.sef.simpleindex.query;
+
+import ninja.sef.simpleindex.Operation;
+
+public class FuzzyQueryOperation implements Operation {
+
+    @Override
+    public void execute(String indexDir) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

@@ -1,0 +1,29 @@
+package ninja.sef.simpleindex.query;
+
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.FuzzyQuery;
+
+import ninja.sef.simpleindex.Operation;
+import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
+
+public class FuzzyQueryOperation implements Operation {
+
+    private InfoSheetBuilder infoSheetBuilder;
+    
+    public FuzzyQueryOperation(InfoSheetBuilder infoSheetBuilder) {
+        this.infoSheetBuilder = infoSheetBuilder;
+    }
+
+    @Override
+    public void execute(String indexDir) {
+        
+        System.out.println("[FuzzyQueryOperation.execute]");
+        
+        // TODO: Implement and execute FuzzyQuery
+        Term term = new Term("title", "lint");
+        FuzzyQuery fuzzyQuery = new FuzzyQuery(term);
+        
+        
+    }
+
+}

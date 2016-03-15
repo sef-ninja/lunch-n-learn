@@ -1,0 +1,33 @@
+package ninja.sef.simpleindex.query;
+
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.PhraseQuery;
+
+import ninja.sef.simpleindex.Operation;
+import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
+
+public class PhraseQueryOperation implements Operation {
+
+    private InfoSheetBuilder infoSheetBuilder;
+    
+    public PhraseQueryOperation(InfoSheetBuilder infoSheetBuilder) {
+        this.infoSheetBuilder = infoSheetBuilder;
+    }
+
+    @Override
+    public void execute(String indexDir) {
+        System.out.println("[PhraseQueryOperation.execute]");
+        
+        // TODO: Implement and execute PhraseQuery
+        // 
+        PhraseQuery phraseQuery = new PhraseQuery();
+        
+        Term term1 = new Term("description", "delve");
+        Term term2 = new Term("description", "into");
+        Term term1 = new Term("description", "deadly");
+        Term term1 = new Term("description", "dungeons");
+                
+                //{"delve",   dungeons"}
+    }
+
+}

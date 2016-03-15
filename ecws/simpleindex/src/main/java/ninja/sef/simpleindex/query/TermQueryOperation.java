@@ -15,9 +15,17 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.Operation;
+import ninja.sef.simpleindex.crawler.InfoSheet;
+import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
 
 public class TermQueryOperation implements Operation {
 
+    private InfoSheetBuilder infoSheetBuilder;
+
+    public TermQueryOperation(InfoSheetBuilder infoSheetBuilder){
+        this.infoSheetBuilder = infoSheetBuilder;
+    }
+    
     @Override
     public void execute(String indexDir) {
         int topHitNum = 30;
@@ -35,7 +43,12 @@ public class TermQueryOperation implements Operation {
             
             for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
                 Document doc = searcher.doc(scoreDoc.doc);
-                System.out.println(doc.get("title"));
+                String path = doc.get("path");
+                
+                InfoSheet infoSheet = infoSheetBuilder.build(new File(path));
+                System.out.println("*** " + infoSheet.getTitle() + " (" + scoreDoc.score + ") ***");
+                System.out.println(infoSheet.getDescription());
+                System.out.println("-------------------------------------------------------");
             }
             
         } catch (IOException e) {

@@ -1,0 +1,20 @@
+package ninja.sef.simpleindex;
+
+
+public class OperationFactory {
+    public static Operation createOperation(String operatorSwitch) {
+        
+        Operation operation = null;
+        InfoSheetBuilder infoSheetBuilder = new TikaInfoSheetBuilder();
+        
+        if("-buildindex".equals(operatorSwitch)) {
+            InfoSheetCrawler infoSheetCrawler = new TikaInfoSheetCrawler(infoSheetBuilder);
+        	DocumentBuilder documentBuilder = new InfoSheetDocumentBuilder();
+            operation = new IndexCreatorOperation(infoSheetCrawler, documentBuilder);
+        } else if("-termquery".equals(operatorSwitch)) {
+            operation = new TermQueryOperation(infoSheetBuilder);
+        }
+        
+        return operation;
+    }
+}

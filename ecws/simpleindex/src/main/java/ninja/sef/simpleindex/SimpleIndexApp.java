@@ -2,7 +2,8 @@ package ninja.sef.simpleindex;
 
 public class SimpleIndexApp {
 
-    public static final String INDEX_DIR = "/home/hourglass/LunchNLearn/TextSearch/index/simpleindex";
+    public static final String INDEX_DIR =
+            "/home/hourglass/LunchNLearn/TextSearch/demo/index/simpleindex";
 
     public static void main(String[] args) {
         

@@ -1,35 +1,38 @@
 package ninja.sef.simpleindex;
 
-import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
-import ninja.sef.simpleindex.crawler.InfoSheetCrawler;
-import ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder;
-import ninja.sef.simpleindex.crawler.TikaInfoSheetCrawler;
+import ninja.sef.simpleindex.crawler.GameBuilder;
+import ninja.sef.simpleindex.crawler.GameCrawler;
+import ninja.sef.simpleindex.crawler.TikaGameBuilder;
+import ninja.sef.simpleindex.crawler.TikaGameCrawler;
 import ninja.sef.simpleindex.index.DocumentBuilder;
 import ninja.sef.simpleindex.index.IndexCreatorOperation;
-import ninja.sef.simpleindex.index.InfoSheetDocumentBuilder;
+import ninja.sef.simpleindex.index.GameDocumentBuilder;
 import ninja.sef.simpleindex.query.BooleanQueryOperation;
 import ninja.sef.simpleindex.query.FuzzyQueryOperation;
 import ninja.sef.simpleindex.query.PhraseQueryOperation;
+import ninja.sef.simpleindex.query.QueryParserOperation;
 import ninja.sef.simpleindex.query.TermQueryOperation;
 
 public class OperationFactory {
     public static Operation createOperation(String operatorSwitch) {
         
         Operation operation = null;
-        InfoSheetBuilder infoSheetBuilder = new TikaInfoSheetBuilder();
+        GameBuilder gameBuilder = new TikaGameBuilder();
         
         if("-buildindex".equals(operatorSwitch)) {
-            InfoSheetCrawler infoSheetCrawler = new TikaInfoSheetCrawler(infoSheetBuilder);
-        	DocumentBuilder documentBuilder = new InfoSheetDocumentBuilder();
-            operation = new IndexCreatorOperation(infoSheetCrawler, documentBuilder);
+            GameCrawler gameCrawler = new TikaGameCrawler(gameBuilder);
+        	DocumentBuilder documentBuilder = new GameDocumentBuilder();
+            operation = new IndexCreatorOperation(gameCrawler, documentBuilder);
         } else if("-termquery".equals(operatorSwitch)) {
-            operation = new TermQueryOperation(infoSheetBuilder);
+            operation = new TermQueryOperation(gameBuilder);
         } else if("-booleanquery".equals(operatorSwitch)) {
-            operation = new BooleanQueryOperation(infoSheetBuilder);
+            operation = new BooleanQueryOperation(gameBuilder);
         } else if("-phrasequery".equals(operatorSwitch)) {
-            operation = new PhraseQueryOperation(infoSheetBuilder);
+            operation = new PhraseQueryOperation(gameBuilder);
         } else if("-fuzzyquery".equals(operatorSwitch)) {
-            operation = new FuzzyQueryOperation(infoSheetBuilder);
+            operation = new FuzzyQueryOperation(gameBuilder);
+        } else if("-queryparser".equals(operatorSwitch)) {
+            operation = new QueryParserOperation(gameBuilder);
         }
         
         return operation;

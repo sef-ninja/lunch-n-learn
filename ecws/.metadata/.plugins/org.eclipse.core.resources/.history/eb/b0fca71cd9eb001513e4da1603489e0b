@@ -1,0 +1,19 @@
+package ninja.sef.simpleindex.query;
+
+import ninja.sef.simpleindex.Operation;
+import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
+
+public class QueryParserOperation implements Operation {
+
+    private InfoSheetBuilder infoSheetBuilder;
+    
+    public QueryParserOperation(InfoSheetBuilder infoSheetBuilder) {
+        this.infoSheetBuilder = infoSheetBuilder;
+    }
+
+    @Override
+    public void execute(String indexDir) {
+        // TODO: Implement and execute QueryParser logic
+
+    }
+}

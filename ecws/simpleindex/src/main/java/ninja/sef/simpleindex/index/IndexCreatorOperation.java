@@ -3,19 +3,19 @@ package ninja.sef.simpleindex.index;
 import java.util.List;
 
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.InfoSheet;
-import ninja.sef.simpleindex.crawler.InfoSheetCrawler;
+import ninja.sef.simpleindex.crawler.Game;
+import ninja.sef.simpleindex.crawler.GameCrawler;
 
 public class IndexCreatorOperation implements Operation {
 
-    private static final String INFOSHEET_DIR =
-            "/home/hourglass/LunchNLearn/TextSearch/demo/infosheet";
-    private InfoSheetCrawler infoSheetCrawler;
+    private static final String GAME_DIR =
+            "/home/hourglass/LunchNLearn/TextSearch/demo/kingdom_of_hyrule";
+    private GameCrawler gameCrawler;
     private DocumentBuilder documentBuilder;
     
-    public IndexCreatorOperation(InfoSheetCrawler infoSheetCrawler,
+    public IndexCreatorOperation(GameCrawler gameCrawler,
             DocumentBuilder documentBuilder) {
-        this.infoSheetCrawler = infoSheetCrawler;
+        this.gameCrawler = gameCrawler;
         this.documentBuilder = documentBuilder;
     }
 
@@ -24,16 +24,16 @@ public class IndexCreatorOperation implements Operation {
         // TODO: RL
         System.out.println("[IndexCreatorOperation] execute");
        
-        List<InfoSheet> infoSheets = infoSheetCrawler.crawl(INFOSHEET_DIR);
+        List<Game> games = gameCrawler.crawl(GAME_DIR);
         
-        for(InfoSheet infoSheet : infoSheets) {
-            System.out.println(infoSheet + System.getProperty("line.separator") + "-------------------------------");
+        for(Game game : games) {
+            System.out.println(game + System.getProperty("line.separator") + "-------------------------------");
         }
         
         System.out.println("This will index multiple documents and store the index here: " + indexDir);
       
         TextIndexer indexer = new LuceneTextIndexer(indexDir, documentBuilder);
-        indexer.initializeIndex(infoSheets);    
+        indexer.initializeIndex(games);    
 
     }
 }

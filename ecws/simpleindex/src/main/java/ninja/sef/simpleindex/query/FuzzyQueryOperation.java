@@ -15,15 +15,15 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.InfoSheet;
-import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
+import ninja.sef.simpleindex.crawler.Game;
+import ninja.sef.simpleindex.crawler.GameBuilder;
 
 public class FuzzyQueryOperation implements Operation {
 
-    private InfoSheetBuilder infoSheetBuilder;
+    private GameBuilder gameBuilder;
     
-    public FuzzyQueryOperation(InfoSheetBuilder infoSheetBuilder) {
-        this.infoSheetBuilder = infoSheetBuilder;
+    public FuzzyQueryOperation(GameBuilder gameBuilder) {
+        this.gameBuilder = gameBuilder;
     }
 
     @Override
@@ -44,8 +44,8 @@ public class FuzzyQueryOperation implements Operation {
                 Document doc = searcher.doc(scoreDoc.doc);
                 String path = doc.get("path");
                 
-                InfoSheet infoSheet = infoSheetBuilder.build(new File(path));
-                System.out.println("*** " + infoSheet.getTitle() + " (" + scoreDoc.score + ") ***");
+                Game game = gameBuilder.build(new File(path));
+                System.out.println("*** " + game.getTitle() + " (" + scoreDoc.score + ") ***");
             }
         } catch (IOException e) {
             e.printStackTrace();

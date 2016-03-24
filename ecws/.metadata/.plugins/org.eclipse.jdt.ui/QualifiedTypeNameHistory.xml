@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools.Resolution"/>
 <fullyQualifiedTypeName name="org.apache.lucene.analysis.Analyzer"/>
-<fullyQualifiedTypeName name="org.apache.lucene.search.TermQuery"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetBuilder"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetCrawler"/>
@@ -33,15 +32,20 @@
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.query.FuzzyQueryOperation"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.FuzzyQuery"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.query.PhraseQueryOperation"/>
-<fullyQualifiedTypeName name="org.apache.lucene.index.Term"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.PhraseQuery"/>
 <fullyQualifiedTypeName name="org.apache.lucene.store.FSDirectory"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.apache.lucene.store.Directory"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.apache.lucene.index.DirectoryReader"/>
 <fullyQualifiedTypeName name="org.apache.lucene.index.IndexReader"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.IndexSearcher"/>
+<fullyQualifiedTypeName name="org.apache.lucene.index.Term"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.BooleanQuery"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.BooleanClause"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.BooleanClause.Occur"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.TermQuery"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.TopDocs"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.ScoreDoc"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.Document"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.QueryParserOperation"/>
 </qualifiedTypeNameHistroy>

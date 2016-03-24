@@ -13,7 +13,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
-import ninja.sef.simpleindex.crawler.InfoSheet;
+import ninja.sef.simpleindex.crawler.Game;
 
 public class LuceneTextIndexer implements TextIndexer {
 
@@ -25,7 +25,7 @@ public class LuceneTextIndexer implements TextIndexer {
         this.documentBuilder = documentBuilder;
     }
 
-    public void initializeIndex(List<InfoSheet> infoSheets) {
+    public void initializeIndex(List<Game> games) {
         try {
             Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_44);
             IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LUCENE_44,
@@ -34,11 +34,11 @@ public class LuceneTextIndexer implements TextIndexer {
             Directory indexDir = FSDirectory.open(new File(indexDirPath));
             IndexWriter indexWriter = new IndexWriter(indexDir, indexWriterConfig);
             
-            for(InfoSheet infoSheet : infoSheets) {
+            for(Game game : games) {
                 
-                System.out.println("Indexing: " + infoSheet.getTitle());
+                System.out.println("Indexing: " + game.getTitle());
                 
-                Document document = documentBuilder.build(infoSheet);
+                Document document = documentBuilder.build(game);
                 indexWriter.addDocument(document);
             }
             

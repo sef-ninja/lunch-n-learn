@@ -15,15 +15,15 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.InfoSheet;
-import ninja.sef.simpleindex.crawler.InfoSheetBuilder;
+import ninja.sef.simpleindex.crawler.Game;
+import ninja.sef.simpleindex.crawler.GameBuilder;
 
 public class PhraseQueryOperation implements Operation {
 
-    private InfoSheetBuilder infoSheetBuilder;
+    private GameBuilder gameBuilder;
     
-    public PhraseQueryOperation(InfoSheetBuilder infoSheetBuilder) {
-        this.infoSheetBuilder = infoSheetBuilder;
+    public PhraseQueryOperation(GameBuilder gameBuilder) {
+        this.gameBuilder = gameBuilder;
     }
 
     @Override
@@ -36,9 +36,14 @@ public class PhraseQueryOperation implements Operation {
             IndexSearcher searcher = new IndexSearcher(indexReader);
             
             PhraseQuery phraseQuery = new PhraseQuery();
-            phraseQuery.add(new Term("description", "legendary"));
-            phraseQuery.add(new Term("description", "sacred"));
-            phraseQuery.add(new Term("description", "realm"));
+//            phraseQuery.add(new Term("description", "legendary"));
+//            phraseQuery.add(new Term("description", "sacred"));
+//            phraseQuery.add(new Term("description", "realm"));
+
+            phraseQuery.add(new Term("description", "fight"));
+            phraseQuery.add(new Term("description", "off"));
+            phraseQuery.add(new Term("description", "fiendish"));
+            phraseQuery.add(new Term("description", "hordes"));            
             
             TopDocs topDocs = searcher.search(phraseQuery, topHitNum);
             for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
@@ -46,9 +51,9 @@ public class PhraseQueryOperation implements Operation {
                 
                 String path = doc.get("path");
                 
-                InfoSheet infoSheet = infoSheetBuilder.build(new File(path));
-                System.out.println("*** " + infoSheet.getTitle() + " (" + scoreDoc.score + ") ***");
-                System.out.println(infoSheet.getDescription());
+                Game game = gameBuilder.build(new File(path));
+                System.out.println("*** " + game.getTitle() + " (" + scoreDoc.score + ") ***");
+                System.out.println(game.getDescription());
                 System.out.println("-------------------------------------------------------");
             }
         } catch (IOException e) {

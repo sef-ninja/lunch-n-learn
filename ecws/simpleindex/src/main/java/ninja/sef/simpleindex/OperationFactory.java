@@ -8,6 +8,7 @@ import ninja.sef.simpleindex.index.DocumentBuilder;
 import ninja.sef.simpleindex.index.IndexCreatorOperation;
 import ninja.sef.simpleindex.index.GameDocumentBuilder;
 import ninja.sef.simpleindex.query.BooleanQueryOperation;
+import ninja.sef.simpleindex.query.DateRangeFilterOperation;
 import ninja.sef.simpleindex.query.FuzzyQueryOperation;
 import ninja.sef.simpleindex.query.PhraseQueryOperation;
 import ninja.sef.simpleindex.query.QueryParserOperation;
@@ -25,6 +26,8 @@ public class OperationFactory {
             operation = new IndexCreatorOperation(gameCrawler, documentBuilder);
         } else if("-termquery".equals(operatorSwitch)) {
             operation = new TermQueryOperation(gameBuilder);
+        } else if("-daterangefilter".equals(operatorSwitch)) {
+            operation = new DateRangeFilterOperation(gameBuilder);
         } else if("-booleanquery".equals(operatorSwitch)) {
             operation = new BooleanQueryOperation(gameBuilder);
         } else if("-phrasequery".equals(operatorSwitch)) {

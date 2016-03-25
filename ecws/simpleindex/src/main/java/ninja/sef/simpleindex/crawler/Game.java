@@ -51,6 +51,10 @@ public class Game {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
+	public String getFileName() {
+	    int index = filePath.lastIndexOf(System.getProperty("file.separator"));
+	    return filePath.substring(index+1);
+	}
 
     @Override
     public String toString() {

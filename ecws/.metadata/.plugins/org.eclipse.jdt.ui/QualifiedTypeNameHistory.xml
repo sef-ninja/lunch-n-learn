@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.apache.tika.metadata.Metadata"/>
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="org.xml.sax.ContentHandler"/>
@@ -19,19 +18,8 @@
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.DateTools.Resolution"/>
 <fullyQualifiedTypeName name="org.apache.lucene.analysis.Analyzer"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetBuilder"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetCrawler"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetCrawler"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.DocumentBuilder"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.InfoSheetDocumentBuilder"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.IndexCreatorOperation"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.TermQueryOperation"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheet"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.BooleanQueryOperation"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.FuzzyQueryOperation"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.FuzzyQuery"/>
-<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.PhraseQueryOperation"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.PhraseQuery"/>
 <fullyQualifiedTypeName name="org.apache.lucene.store.FSDirectory"/>
 <fullyQualifiedTypeName name="org.apache.lucene.store.Directory"/>
@@ -47,5 +35,22 @@
 <fullyQualifiedTypeName name="org.apache.lucene.search.TopDocs"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.ScoreDoc"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.Document"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.InfoSheetCrawler"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetCrawler"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.DocumentBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.crawler.TikaInfoSheetBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.InfoSheetDocumentBuilder"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.IndexCreatorOperation"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.TermQueryOperation"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.BooleanQueryOperation"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.PhraseQueryOperation"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.FuzzyQueryOperation"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.query.QueryParserOperation"/>
+<fullyQualifiedTypeName name="org.apache.lucene.document.LongField"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.query.DateRangeFilterOperation"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.Query"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.NumericRangeQuery"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.QueryWrapperFilter"/>
 </qualifiedTypeNameHistroy>

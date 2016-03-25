@@ -19,6 +19,9 @@ public class GameDocumentBuilder implements DocumentBuilder {
         document.add(new TextField("title", game.getTitle(), Store.YES));
         document.add(new TextField("description", game.getDescription(), Store.NO));
         
+//        String releaseDate = DateTools.dateToString(game.getReleaseDate(), Resolution.DAY);
+//        document.add(new StringField("release_date", releaseDate, Store.NO));
+        
         long releaseDate = game.getReleaseDate().getTime();
         document.add(new LongField("release_date", releaseDate, Store.NO));
         

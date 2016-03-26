@@ -21,6 +21,7 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import ninja.sef.simpleindex.ConsoleUtilities;
 import ninja.sef.simpleindex.Operation;
 import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameBuilder;
@@ -35,6 +36,9 @@ public class DateRangeFilterOperation implements Operation {
 
     @Override
     public void execute(String indexDir) {
+        
+        ConsoleUtilities.printHeader();
+        
         int topHitNum = 30;
         Term term = new Term("description", "adventure");
         TermQuery termQuery = new TermQuery(term);
@@ -55,13 +59,12 @@ public class DateRangeFilterOperation implements Operation {
             
             TopDocs topDocs = searcher.search(termQuery, filter, topHitNum);
             
-            
             for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
                 Document doc = searcher.doc(scoreDoc.doc);
                 String path = doc.get("path");
                 
                 Game game = gameBuilder.build(new File(path));
-                                
+                
                 System.out.println("*** " + game.getTitle() + ", " +
                         game.getFileName() + ", " +
                         dateFormat.format(game.getReleaseDate()) +

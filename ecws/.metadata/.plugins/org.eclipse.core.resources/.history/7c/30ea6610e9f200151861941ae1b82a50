@@ -1,0 +1,7 @@
+package ninja.sef.simpleindex;
+
+public class ConsoleUtilities {
+    public static void printHeader() {
+        
+    }
+}

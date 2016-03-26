@@ -53,4 +53,5 @@
 <fullyQualifiedTypeName name="org.apache.lucene.search.NumericRangeQuery"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.QueryWrapperFilter"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.ConsoleUtilities"/>
 </qualifiedTypeNameHistroy>

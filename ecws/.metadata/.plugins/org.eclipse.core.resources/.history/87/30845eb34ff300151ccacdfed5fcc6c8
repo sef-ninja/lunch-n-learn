@@ -51,7 +51,12 @@ public class DateRangeFilterOperation implements Operation {
             Date minDate = dateFormat.parse("01/01/2000");
             Date maxDate = dateFormat.parse("12/31/2015");
             
-            // Restrict which documents are returned
+//            Query dateRangeQuery = NumericRangeQuery.newLongRange("release_date",
+//                    minDate.getTime(), maxDate.getTime(), true, true);
+//                        
+//            QueryWrapperFilter filter = new QueryWrapperFilter(dateRangeQuery);
+            
+            // Restrict the documents returned to those in a specific range of dates
             Filter filter = NumericRangeFilter.newLongRange("release_date",
                     minDate.getTime(), maxDate.getTime(), true, true);
             

@@ -11,9 +11,7 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.search.Filter;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.NumericRangeFilter;
 import org.apache.lucene.search.NumericRangeQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.QueryWrapperFilter;
@@ -51,9 +49,10 @@ public class DateRangeFilterOperation implements Operation {
             Date minDate = dateFormat.parse("01/01/2000");
             Date maxDate = dateFormat.parse("12/31/2015");
             
-            // Restrict which documents are returned
-            Filter filter = NumericRangeFilter.newLongRange("release_date",
+            Query dateRangeQuery = NumericRangeQuery.newLongRange("release_date",
                     minDate.getTime(), maxDate.getTime(), true, true);
+                        
+            QueryWrapperFilter filter = new QueryWrapperFilter(dateRangeQuery);
             
             TopDocs topDocs = searcher.search(termQuery, filter, topHitNum);
             

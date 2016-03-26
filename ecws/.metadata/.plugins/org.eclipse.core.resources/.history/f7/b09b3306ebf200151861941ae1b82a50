@@ -29,6 +29,9 @@ public class FuzzyQueryOperation implements Operation {
 
     @Override
     public void execute(String indexDir) {
+        
+        ConsoleUtilities.printHeader();
+        
         int topHitNum = 30;
         
         Directory indexDirectory;

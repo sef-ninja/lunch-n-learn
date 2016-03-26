@@ -17,7 +17,6 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import ninja.sef.simpleindex.ConsoleUtilities;
 import ninja.sef.simpleindex.Operation;
 import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameBuilder;
@@ -32,9 +31,6 @@ public class BooleanQueryOperation implements Operation {
 
     @Override
     public void execute(String indexDir) {
-        
-        ConsoleUtilities.printHeader();
-        
         try {
             Directory indexDirectory = FSDirectory.open(new File(indexDir));
             IndexReader indexReader = DirectoryReader.open(indexDirectory);

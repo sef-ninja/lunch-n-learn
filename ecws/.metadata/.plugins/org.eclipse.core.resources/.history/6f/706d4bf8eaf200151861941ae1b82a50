@@ -24,7 +24,6 @@ public class SimpleIndexApp {
             System.exit(1);
         }
         
-        ConsoleUtilities.printHeader();
         OperationFactory.createOperation(args[0]).execute(INDEX_DIR);
     }
     

@@ -36,6 +36,9 @@ public class DateRangeFilterOperation implements Operation {
 
     @Override
     public void execute(String indexDir) {
+        
+        ConsoleUtilities.printHeader();
+        
         int topHitNum = 30;
         Term term = new Term("description", "adventure");
         TermQuery termQuery = new TermQuery(term);

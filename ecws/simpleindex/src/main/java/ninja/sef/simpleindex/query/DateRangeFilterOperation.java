@@ -25,8 +25,8 @@ import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.ConsoleUtilities;
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameBuilder;
+import ninja.sef.simpleindex.domain.Game;
 
 public class DateRangeFilterOperation implements Operation {
 
@@ -62,14 +62,7 @@ public class DateRangeFilterOperation implements Operation {
                 String path = doc.get("path");
                 
                 Game game = gameBuilder.build(new File(path));
-                
-                System.out.println("*** " + game.getTitle() + ", " +
-                        game.getFileName() + ", " +
-                        dateFormat.format(game.getReleaseDate()) +
-                        " (" + scoreDoc.score + ") ***");
-                System.out.println();
-                System.out.println(game.getDescription());
-                System.out.println("-------------------------------------------------------");
+                System.out.println(ResultFormatter.format(game, scoreDoc.score));
             }
             
         } catch (IOException e) {

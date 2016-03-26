@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import ninja.sef.simpleindex.domain.Game;
+
 public class TikaGameCrawler implements GameCrawler {
 
     private GameBuilder gameBuilder;

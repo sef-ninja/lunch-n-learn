@@ -1,11 +1,12 @@
 package ninja.sef.simpleindex.index;
 
-import ninja.sef.simpleindex.crawler.Game;
-
 import org.apache.lucene.document.DateTools;
 import org.apache.lucene.document.DateTools.Resolution;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field.Store;
+
+import ninja.sef.simpleindex.domain.Game;
+
 import org.apache.lucene.document.LongField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;

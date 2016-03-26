@@ -54,4 +54,7 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.QueryWrapperFilter"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.ConsoleUtilities"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.NumericRangeFilter"/>
+<fullyQualifiedTypeName name="org.apache.lucene.search.Filter"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.domain.Game"/>
 </qualifiedTypeNameHistroy>

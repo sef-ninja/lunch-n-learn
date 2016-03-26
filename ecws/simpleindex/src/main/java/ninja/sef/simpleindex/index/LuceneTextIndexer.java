@@ -13,7 +13,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
-import ninja.sef.simpleindex.crawler.Game;
+import ninja.sef.simpleindex.domain.Game;
 
 public class LuceneTextIndexer implements TextIndexer {
 

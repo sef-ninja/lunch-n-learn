@@ -1,0 +1,5 @@
+package ninja.sef.simpleindex.query;
+
+public class ResultFormatter {
+    public static String format(Game game, float score);
+}

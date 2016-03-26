@@ -16,8 +16,8 @@ import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.ConsoleUtilities;
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameBuilder;
+import ninja.sef.simpleindex.domain.Game;
 
 public class FuzzyQueryOperation implements Operation {
 
@@ -46,7 +46,7 @@ public class FuzzyQueryOperation implements Operation {
                 String path = doc.get("path");
                 
                 Game game = gameBuilder.build(new File(path));
-                System.out.println("*** " + game.getTitle() + " (" + scoreDoc.score + ") ***");
+                System.out.println(ResultFormatter.format(game, scoreDoc.score));
             }
         } catch (IOException e) {
             e.printStackTrace();

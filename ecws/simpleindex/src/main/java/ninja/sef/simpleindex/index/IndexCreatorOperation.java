@@ -3,8 +3,8 @@ package ninja.sef.simpleindex.index;
 import java.util.List;
 
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameCrawler;
+import ninja.sef.simpleindex.domain.Game;
 
 public class IndexCreatorOperation implements Operation {
 

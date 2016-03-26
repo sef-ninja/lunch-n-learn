@@ -15,8 +15,8 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import ninja.sef.simpleindex.Operation;
-import ninja.sef.simpleindex.crawler.Game;
 import ninja.sef.simpleindex.crawler.GameBuilder;
+import ninja.sef.simpleindex.domain.Game;
 
 public class PhraseQueryOperation implements Operation {
 
@@ -52,9 +52,7 @@ public class PhraseQueryOperation implements Operation {
                 String path = doc.get("path");
                 
                 Game game = gameBuilder.build(new File(path));
-                System.out.println("*** " + game.getTitle() + " (" + scoreDoc.score + ") ***");
-                System.out.println(game.getDescription());
-                System.out.println("-------------------------------------------------------");
+                System.out.println(ResultFormatter.format(game, scoreDoc.score));
             }
         } catch (IOException e) {
             e.printStackTrace();

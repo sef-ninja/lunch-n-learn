@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat;
 
 import org.apache.tika.Tika;
 
+import ninja.sef.simpleindex.domain.Game;
+
 public class TikaGameBuilder implements GameBuilder {
 
     public Game build(File gameFile) {

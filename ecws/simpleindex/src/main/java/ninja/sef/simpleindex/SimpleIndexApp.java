@@ -35,6 +35,7 @@ public class SimpleIndexApp {
         System.out.println("");
         System.out.println("    Valid operations:");
         System.out.println("            -buildindex");
+        System.out.println("            -indextimeboosting");
         System.out.println("            -termquery");
         System.out.println("            -daterangefilter");
         System.out.println("            -booleanquery");

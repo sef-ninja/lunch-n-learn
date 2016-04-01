@@ -1,7 +1,0 @@
-package ninja.sef.simpleindex.crawler;
-
-import java.util.List;
-
-public interface InfoSheetCrawler {
-    List<Game> crawl(String dirPath);
-}

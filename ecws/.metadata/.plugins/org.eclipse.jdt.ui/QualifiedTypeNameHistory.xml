@@ -57,4 +57,6 @@
 <fullyQualifiedTypeName name="org.apache.lucene.search.NumericRangeFilter"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.Filter"/>
 <fullyQualifiedTypeName name="ninja.sef.simpleindex.domain.Game"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.GameIndexer"/>
+<fullyQualifiedTypeName name="ninja.sef.simpleindex.index.LuceneGameIndexer"/>
 </qualifiedTypeNameHistroy>

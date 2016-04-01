@@ -11,19 +11,15 @@ public class IndexCreatorOperation implements Operation {
     private static final String GAME_DIR =
             "/home/hourglass/LunchNLearn/TextSearch/demo/kingdom_of_hyrule";
     private GameCrawler gameCrawler;
-    private DocumentBuilder documentBuilder;
-    
-    public IndexCreatorOperation(GameCrawler gameCrawler,
-            DocumentBuilder documentBuilder) {
+    private GameIndexer gameIndexer;
+        
+    public IndexCreatorOperation(GameCrawler gameCrawler, GameIndexer gameIndexer) {
         this.gameCrawler = gameCrawler;
-        this.documentBuilder = documentBuilder;
+        this.gameIndexer = gameIndexer;
     }
 
     public void execute(String indexDir) {
-        
-        // TODO: RL
-        System.out.println("[IndexCreatorOperation] execute");
-       
+      
         List<Game> games = gameCrawler.crawl(GAME_DIR);
         
         for(Game game : games) {
@@ -32,8 +28,6 @@ public class IndexCreatorOperation implements Operation {
         
         System.out.println("This will index multiple documents and store the index here: " + indexDir);
       
-        TextIndexer indexer = new LuceneTextIndexer(indexDir, documentBuilder);
-        indexer.initializeIndex(games);    
-
+        gameIndexer.initializeIndex(indexDir, games);    
     }
 }

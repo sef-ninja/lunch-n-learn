@@ -6,7 +6,9 @@ import ninja.sef.simpleindex.crawler.TikaGameBuilder;
 import ninja.sef.simpleindex.crawler.TikaGameCrawler;
 import ninja.sef.simpleindex.index.DocumentBuilder;
 import ninja.sef.simpleindex.index.IndexCreatorOperation;
+import ninja.sef.simpleindex.index.LuceneGameIndexer;
 import ninja.sef.simpleindex.index.GameDocumentBuilder;
+import ninja.sef.simpleindex.index.GameIndexer;
 import ninja.sef.simpleindex.query.BooleanQueryOperation;
 import ninja.sef.simpleindex.query.DateRangeFilterOperation;
 import ninja.sef.simpleindex.query.FuzzyQueryOperation;
@@ -23,7 +25,10 @@ public class OperationFactory {
         if("-buildindex".equals(operatorSwitch)) {
             GameCrawler gameCrawler = new TikaGameCrawler(gameBuilder);
         	DocumentBuilder documentBuilder = new GameDocumentBuilder();
-            operation = new IndexCreatorOperation(gameCrawler, documentBuilder);
+        	GameIndexer gameIndexer = new LuceneGameIndexer(documentBuilder);
+            operation = new IndexCreatorOperation(gameCrawler, gameIndexer);
+        } else if("-indextimeboosting".equals(operatorSwitch)) {
+            // TODO: Create a LuceneBoostingGameIndexer and create an operation
         } else if("-termquery".equals(operatorSwitch)) {
             operation = new TermQueryOperation(gameBuilder);
         } else if("-daterangefilter".equals(operatorSwitch)) {

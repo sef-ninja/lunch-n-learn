@@ -13,7 +13,7 @@ public class ResultFormatter {
         game.getFileName() + ", " +
         dateFormat.format(game.getReleaseDate()) +
         " (" + score + ") ***" +
-        System.getProperty("line.separator") +
+        System.getProperty("line.separator") + game.getDescription() +
         "----------------------------------------------------";
     }
 }
